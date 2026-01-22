@@ -36,7 +36,7 @@ optimizer = torch.optim.Adam(
 )
 
 # Training loop
-EPOCHS = 3
+EPOCHS = 5
 
 for epoch in range(EPOCHS):
     total_loss = 0.0
@@ -59,3 +59,9 @@ for epoch in range(EPOCHS):
     print(f"Epoch {epoch+1} Loss: {total_loss:.4f}")
 
 print("Training completed successfully.")
+
+# Save trained models
+torch.save(qnn.state_dict(), "qnn_model.pth")
+torch.save(classifier.state_dict(), "classifier_model.pth")
+
+print("Models saved successfully.")
